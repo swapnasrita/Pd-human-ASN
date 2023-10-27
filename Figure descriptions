@@ -1,0 +1,18 @@
+Number of patients = 20
+Models compared = Graff, Garred and Three-pore model
+
+
+The normalised root mean square error ((RMSE) ̂) is given by,
+(RMSE) ̂  =  (∑_(all solutes)▒∑_(t=0)^(t=end)▒〖〖(c ̂〗_(d,predicted)-c ̂_(d,measured))〗^2 )^0.5/n
+
+
+where c ̂_(d,predicted) and c ̂_(d,measured) are the predicted and measured dialysate concentrations respectively normalised and n is the number of time points. Normalisation is done by using a feature scaling technique ‘MinMaxScaler’ which transforms each feature (X) between min 0 and max 1. 
+X_std  = (X - X_min) / (X_max  - X_min)
+X_scaled  = X_std  * (max - min) + min
+The model with the lowest RMSE and fitted MTAC within physiological boundaries is chosen as the best performing model for each dataset.
+
+
+solute specific error: the normalised error per solute per patient per model. Red markers are unphysiological fitted parameters for that model.
+objfn-differentRV-TPM: sum of normalised error per patient per model. black crosses - fitted parameters are unphysiological
+MTAC-differentRV-TPM: Fitted MTAC per patient per model. black crosses - fitted parameters are unphysiological
+correlation_matrix: correlation between patient demographics and fitted parameters for three-pore model.
